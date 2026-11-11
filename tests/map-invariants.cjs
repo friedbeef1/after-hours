@@ -1,0 +1,1 @@
+const{open}=require('./harness.cjs');(async()=>{let{browser,page}=await open({wait:100});try{console.log(JSON.stringify(await page.evaluate(()=>{let g=window.__hs;return {boxes:g.world.boxes,points:g.world.points,holds:g.world.holds,sites:g.world.sites,routes:g.world.routes,spawns:g.world.spawns}})))}finally{await browser.close()}})();
